@@ -1,0 +1,29 @@
+h2 {
+    color : red;
+    background-color: lightblue;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.1em;
+    padding-top: 0.5em;
+    text-align: center;
+    font-style: italic;
+}
+
+h1 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1em;
+}
+
+a {
+    color: black;
+    padding-right: 0.7em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 0.8em;
+}
+
+.trainer_firstName,
+.trainer_lastName,
+.trainer_subject {
+    padding-right: 0.5em;
+    color: black;
+}
+

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}My app{% endblock %} </title>
+    {% load static %}
+    <link rel = "stylesheet" type = "text/css" href="{% static 'trainer/css/main.css' %}">
+</head>
+
+<body>
+    <div id = "logo">
+        <h2>My App</h2>
+    </div>
+    <span id = "linkbar">
+        {% block linkbar %}
+            <a href = "/trainer/home/">All trainers</a>
+            <a href = "/trainer/create_trainer/">Create Trainer</a>
+            <a href = "/trainer/logout/">Log out</a>
+        {% endblock %}
+    </span>
+    <hr>
+    <div id = "content">
+        {% block content %} {% endblock %}
+    </div>
+</body>
+</html>

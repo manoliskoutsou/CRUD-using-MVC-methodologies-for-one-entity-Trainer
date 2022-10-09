@@ -1,0 +1,29 @@
+{% extends "trainer/base.html" %}
+
+{% block title%}Login{% endblock%}
+{% block linkbar %}
+     <a href = "/trainer/login/">Login</a>
+     <a href = "/trainer/signup/">Sign up</a>
+{% endblock %}
+
+{% block content %}
+    <form method = "post">
+        {% csrf_token %}
+        <h1>Login</h1>
+        <label for = "username">Username:</label>
+        <input type = "text" name= "username" id = "username" /> <br>
+
+        <label for = "password">Password:</label>
+        <input type = "password" name= "password" id = "password" /> <br>
+
+        {%if empty_username%}
+            <div> {{empty_username}} </div>
+        {%elif empty_passworf%}
+            <div> {{empty_password}} </div>
+        {%elif invalid%}
+            <div> {{ invalid}} </div> 
+        {%endif%}   
+        <br>
+        <button type = "submit">Login</button>
+    </form>
+{% endblock %}

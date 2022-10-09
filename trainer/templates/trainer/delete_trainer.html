@@ -1,0 +1,16 @@
+{% extends "trainer/base.html" %}
+{% load static %}
+{% block content %}
+
+<p>Are you sure you want to delete "{{  trainer.firstName }} {{  trainer.lastName }} {{  trainer.subject }}"?</p>
+
+<form action="{% url 'delete_trainer' trainer.id %}" method="POST">
+    {% csrf_token %}
+    <a href=" {% url 'home' %}">Cancel</a>
+    
+    
+    <button type="submit" name="Confirm">Confirm</button>
+
+</form>
+
+{% endblock %}

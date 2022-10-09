@@ -1,0 +1,14 @@
+{% extends "trainer/base.html" %}
+{% load static %}
+{% block content %}
+
+<form action="" method="POST">
+    {% csrf_token %}
+    <h1>Create Trainer</h1>
+    {{ form.as_p }}
+    
+    
+    <button type="submit" name="Submit">Submit</button>
+</form>
+
+{% endblock %}

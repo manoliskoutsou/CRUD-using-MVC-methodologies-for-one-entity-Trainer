@@ -1,0 +1,23 @@
+{% extends "trainer/base.html" %}
+
+{% block title%}Edit{% endblock%}
+{% block linkbar %}
+     <a href = "/trainer/home/">Back to home page</a>
+{% endblock %}
+
+{% block content %}
+    <form method = "post">
+        {% csrf_token %}
+        <h1>Edit trainer</h1>
+        <label for = "trainer_firstName">First Name: </label>
+        <input type = "text" name= "trainer_firstName" id = "trainer_firstName" value = {{ trainer.firstName }}> <br>
+
+        <label for = "trainer_lastName">Last Name: </label>
+        <input type = "text" name= "trainer_lastName" id = "trainer_lastName" value = {{ trainer.lastName }}> <br>
+
+        <label for = "trainer_subject">Subject: </label>
+        <input type = "text" name= "trainer_subject" id = "trainer_subject" value = {{ trainer.subject }}> <br>
+        <br>
+        <button type = "submit">Update</button>
+    </form>
+{% endblock %}

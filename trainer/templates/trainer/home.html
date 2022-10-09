@@ -1,0 +1,25 @@
+{% extends "trainer/base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+     <p>All trainers:</p>
+     {% if all_trainers_list %}
+          <ul>
+            {% for trainer in all_trainers_list %}
+                <li>
+                    <span class = "trainer_firstName">{{ trainer.firstName }}, </span>
+                    <span class = "trainer_lastName">{{ trainer.lastName }}, </span>
+                    <span class = "trainer_subject">{{ trainer.subject }}  </span>
+
+    
+                    <span><a href="/trainer/edit/{{ trainer.id }}">Update</a></span>
+                    <span><a href="/trainer/delete/{{ trainer.id }}">Delete</a></span>
+                    
+                </li> 
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No trainers added.</p>
+        {% endif %}
+{% endblock %}
